@@ -1,145 +1,123 @@
-EMCP Baseline NestJS Backend
+# EMCP Cloud Infrastructure Engineer Home Task 🚀
 
-A production‑ready NestJS backend service with Docker, Docker Compose
+A production-ready NestJS backend service template designed for cloud-native deployment.
 
-Description
------------
+---
 
-This project is a baseline NestJS backend service designed for cloud‑native environments. It provides a solid starting point that includes:
+## 📋 Description
 
-*   A modular, TypeScript‑based NestJS server
-    
-*   Docker and Docker Compose configuration for local development
-    
+This project provides a baseline NestJS backend service. Your challenge is to deploy this application to the cloud using modern **GitOps**, **Infrastructure as Code (IaC)**, and **cloud-agnostic** best practices.
 
-Prerequisites
--------------
+---
 
-*   [Node.js](https://nodejs.org/) (v18 or higher recommended)
-    
-*   [Docker](https://www.docker.com/)
-    
-*   [Docker Compose](https://docs.docker.com/compose/)
-    
+## 🛠️ Prerequisites
 
-Developer Home Test 🚀
-----------------------
+- [Docker](https://www.docker.com/)
+- [Terraform](https://www.terraform.io/)
+- Cloud provider account (AWS / GCP / Azure)
+- [Git](https://git-scm.com/)
 
-**Welcome new developers!** Complete this ping-pong service challenge to demonstrate your understanding of the tech stack.
+---
 
-### Challenge Overview
+## 🎯 Challenge Overview
 
-Build a real-time ping-pong service that demonstrates:
+Deploy this NestJS application to your cloud provider of choice while ensuring the infrastructure is **cloud-agnostic** and can be migrated to any cloud or on-premises environment.
 
-*   RESTful API endpoints
-    
-*   Redis streams for message queuing
-    
-*   WebSocket connections for real-time communication
-    
-*   Client-side real-time updates
-    
+---
 
-### Requirements
+## 📦 Task Requirements
 
-#### Backend Implementation
+### Part 1: Use This Template
 
-1.  **Ping Endpoint**: Create a POST endpoint /api/ping that:
-    
-    *   Accepts a "ping" message from clients
-        
-    *   Writes the message to a Redis stream
-        
-    *   Returns acknowledgment to the client
-        
-2.  **Redis Stream Processing**: Implement a background service that:
-    
-    *   Listens to the Redis stream for new ping messages
-        
-    *   Processes each message and transforms it to "pong"
-        
-    *   Broadcasts the "pong" message to all connected WebSocket clients
-        
-3.  **WebSocket Gateway**: Create a WebSocket gateway that:
-    
-    *   Accepts client connections
-        
-    *   Broadcasts "pong" messages to all connected clients
-        
-    *   Handles client connect/disconnect events
-        
+1. Click **"Use this template"** to create a new repository
+2. Clone your new repository locally
+3. All infrastructure code should be added to your fork
 
-#### Frontend Implementation
+---
 
-1.  **Client Application**: Build a simple client (React preferred) that:
-    
-    *   Has a button to send "ping" requests to the server
-        
-    *   Connects to the WebSocket to receive "pong" messages
-        
-    *   Displays received "pong" messages in real-time
-        
-    
+### Part 2: Infrastructure as Code (Terraform)
 
-### Technical Requirements
+Create Terraform configurations to provision the infrastructure needed to run this application.
 
-*   **Local Development Only**: No need for multi-node considerations
-    
-*   **Docker Compose**: All services must run via docker-compose up
-    
-*   **Dependencies**: Include Redis in your docker-compose setup
-    
-*   **Real-time**: Use WebSockets for client-server communication
-    
-*   **Message Queue**: Use Redis streams (not pub/sub)
-    
+> [!IMPORTANT]
+> The infrastructure must be designed to be **cloud-agnostic** - meaning it should be portable across AWS, GCP, Azure, or on-premises with minimal changes.
 
-### Evaluation Criteria
+---
 
-*   ✅ Code quality and organization
-    
-*   ✅ Proper error handling
-    
-*   ✅ Docker setup works out of the box
-    
-*   ✅ Real-time functionality works as described
-    
-*   ✅ Clean and intuitive client interface
-    
-*   ✅ Documentation and comments
-    
+### Part 3: GitOps CI/CD Pipeline
 
-### Deliverables
+Implement a CI/CD workflow using **GitHub Actions**:
 
-1.  Updated NestJS backend with ping-pong service
-    
-2.  Client application (React or any framework)
-    
-3.  Updated docker-compose.yml with Redis
-    
-4.  Brief documentation explaining your implementation choices
-    
+- Use GitHub repository secrets for sensitive configuration
+- Implement proper environment management
+- Ensure deployments are automated and repeatable
 
-Submission
-------------
+---
 
-1.  Click on "Use this template" to create a new repository
-    
-3.  Commit your changes 
-    
-4.  Push your changes to your new repository
+### Part 4: Cloud-Agnostic Design
 
-6.  Send an email - itzhak@enclaive.io with a link
-    
+Your solution **must** be portable. Consider:
 
-Support
--------
+- How would you switch cloud providers with minimal code changes?
+- What abstractions would make migration easier?
+- How do you handle cloud-specific services?
 
-If you encounter issues during the home test or have questions about the setup, please:
+---
 
-1.  Email - itzhak@enclaive.io
-    
-2. Feel free to use any AI, but do not share the entire repo with AI
-    
+### Part 5: Documentation
 
-**Good luck with the home test! Happy hacking 🎯**
+Document your approach:
+
+- Architecture decisions
+- How to deploy
+- How to migrate to a different cloud
+
+---
+
+## ⭐ Bonus: AI-Powered Testing & Safeguards
+
+> [!TIP]
+> Implementing these bonus features will strengthen your submission.
+
+Consider adding:
+
+- **Automated security scanning** in your CI pipeline
+- **AI-powered code review** integration
+- **Policy as Code** for infrastructure compliance
+- **Automated testing** strategies
+
+---
+
+## 📊 Evaluation Criteria
+
+| Category | Description |
+|----------|-------------|
+| **Terraform Quality** | Modular, reusable, well-documented IaC |
+| **GitOps Implementation** | Clean CI/CD with proper automation |
+| **Cloud-Agnostic Design** | Truly portable infrastructure |
+| **Documentation** | Clear explanation of decisions and approach |
+| **Bonus Features** | Security, testing, and AI integrations |
+
+---
+
+## 📬 Submission
+
+1. **Use this template** to create your own repository
+2. Complete the tasks
+3. Push your changes
+4. Add a README.md file to your repository and https://github.com/Mauyhas as admin
+5. **Email**: itzhak@enclaive.io with:
+   - Repository link
+   - Brief summary of your approach
+   - Time spent on the challenge
+
+---
+
+## 🆘 Support
+
+- **Email**: itzhak@enclaive.io
+- Feel free to use AI tools for assistance
+
+---
+
+**Good luck! Show us your cloud infrastructure expertise 🌩️**
